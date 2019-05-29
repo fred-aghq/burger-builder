@@ -19,12 +19,15 @@ const burger = (props) => {
                     return <BurgerIngredient key={igKey + i} type={igKey}/>
                 }
             );
-        });
+        })
+        .reduce((arr, el) => {
+            return arr.concat(el);
+        }, []);
 
     return (
         <div className={BurgerCSS.Burger}>
             <BurgerIngredient type="bread-top"/>
-            {igComponents}
+                {igComponents.length > 0 ? igComponents : <p>No options have been added yet.</p>}
             <BurgerIngredient type="bread-bottom"/>
         </div>
     );

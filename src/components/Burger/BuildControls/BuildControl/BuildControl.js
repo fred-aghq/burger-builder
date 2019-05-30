@@ -4,8 +4,14 @@ import ControlCSS from './BuildControl.module.css';
 const buildControl = props => (
     <div className={ControlCSS.BuildControl}>
         <div className={ControlCSS.Label}>{props.label}</div>
-        <button className={ControlCSS.Less}> - </button>
-        <button className={ControlCSS.More}> + </button>
+        <button
+            onClick={props.removed}
+            className={ControlCSS.Less}> -
+        </button>
+        <button
+            onClick={props.added}
+            className={ControlCSS.More}> +
+        </button>
     </div>
 );
 

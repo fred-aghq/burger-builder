@@ -6,7 +6,8 @@ const buildControl = props => (
         <div className={ControlCSS.Label}>{props.label}</div>
         <button
             onClick={props.removed}
-            className={ControlCSS.Less}> -
+            className={ControlCSS.Less}
+            disabled={props.disabled}> -
         </button>
         <button
             onClick={props.added}

@@ -24,8 +24,12 @@ const orderSummary = props => {
             <ul>
                 {igSummary}
             </ul>
-            <Button>CANCEL</Button>
-            <Button>Continue</Button>
+            <Button btnType='danger' clicked={props.purchaseCancelled}>
+                CANCEL
+            </Button>
+            <Button btnType='success' clicked={props.purchaseContinued}>
+                Continue
+            </Button>
         </Aux>
     );
 };

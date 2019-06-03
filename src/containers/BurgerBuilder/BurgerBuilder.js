@@ -27,7 +27,7 @@ class BurgerBuilder extends React.Component {
             ingredients: BASE_INGREDIENT_STATE,
             totalPrice: BASE_PRICE,
             checkoutAllowed: false,
-            showModal: false
+            purchasing: false
         };
     }
 
@@ -100,9 +100,9 @@ class BurgerBuilder extends React.Component {
         this.updateCheckoutState(ig)
     };
 
-    checkoutModalHandler = () => {
+    purchaseHandler = () => {
         this.setState({
-            showModal: !this.state.showModal
+            purchasing: true
         });
     };
 
@@ -116,7 +116,7 @@ class BurgerBuilder extends React.Component {
 
         return (
             <Aux>
-                <Modal>
+                <Modal show={this.state.purchasing}>
                     <OrderSummary ingredients={this.state.ingredients} />
                 </Modal>
                 <Burger ingredients={this.state.ingredients} />
@@ -128,7 +128,7 @@ class BurgerBuilder extends React.Component {
                     disabledControls={disabled}
                     currentPrice={this.state.totalPrice}
                     checkoutAllowed={this.state.checkoutAllowed}
-                    orderButtonClicked={this.checkoutModalHandler}
+                    orderButtonClicked={this.purchaseHandler}
                 />
             </Aux>
         );

@@ -20,7 +20,7 @@ class Layout extends React.Component {
     render () {
         return (
             <Aux>
-                <Toolbar/>
+                <Toolbar toggleSideDrawer={this.sideDrawerOpenedHandler} />
                 <SideDrawer
                     open={this.state.showDrawer}
                     closed={this.sideDrawerClosedHandler}

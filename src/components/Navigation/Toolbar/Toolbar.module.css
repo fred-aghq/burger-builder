@@ -21,15 +21,8 @@
     height: 80%;
 }
 
-.ToggleSideDrawer {
-    display: none;
-}
-
 @media (max-width: 499px) {
     .DesktopOnly {
         display: none;
-    }
-    .ToggleSideDrawer {
-        display: block;
     }
 }

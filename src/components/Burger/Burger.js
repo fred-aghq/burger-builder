@@ -23,11 +23,14 @@ const burger = (props) => {
         .reduce((arr, el) => {
             return arr.concat(el);
         }, []);
+    let display = igComponents.length > 0
+        ? igComponents
+        : <p>No options have been added yet.</p>
 
     return (
         <div className={BurgerCSS.Burger}>
             <BurgerIngredient type="bread-top"/>
-                {igComponents.length > 0 ? igComponents : <p>No options have been added yet.</p>}
+                {display}
             <BurgerIngredient type="bread-bottom"/>
         </div>
     );

@@ -26,12 +26,3 @@ class Modal extends React.Component {
 }
 
 export default Modal;
-
-// Leaving this here as a reminder of how to use memo for functional components.
-// I'm not sure why the children check didn't work
-// export default React.memo(modal,
-//     (prevProps, nextProps) => {
-//         return (nextProps.show === prevProps.show)
-//             || (nextProps.children === prevProps.children);
-//     }
-// );

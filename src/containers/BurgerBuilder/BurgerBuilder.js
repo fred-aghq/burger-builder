@@ -66,6 +66,7 @@ class BurgerBuilder extends React.Component {
             });
     }
 
+    // @TODO: find a better way to handle changing total price in one place.
     addIngredientHandler = (type) => {
         const oldCount = this.state.ingredients[type];
         const updatedCount = oldCount + 1;
@@ -82,7 +83,7 @@ class BurgerBuilder extends React.Component {
         });
         this.updateCheckoutState(updatedIngredients);
     };
-
+// @TODO: find a better way to handle changing total price in one place.
     removeIngredientHandler = (type) => {
         const oldCount = this.state.ingredients[type];
         if (oldCount <= 0) {
@@ -105,10 +106,7 @@ class BurgerBuilder extends React.Component {
     };
 
     updateCheckoutState(ingredients) {
-        const sum = Object.keys(ingredients)
-            .map(k => {
-                return ingredients[k];
-            })
+        const sum = Object.values(ingredients)
             .reduce((sum, el) => {
                 return sum + el;
             }, 0);
